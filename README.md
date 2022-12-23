@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://shroomsky.github.io/nf--card-component//](https://shroomsky.github.io/nf--card-component//)
+- Solution URL: [https://shroomsky.github.io/nft-card-component//](https://shroomsky.github.io/nft-card-component//)
 
 ### Built with
 
