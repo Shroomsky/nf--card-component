@@ -1,0 +1,170 @@
+:root {
+	--Main_BG: hsl(217, 54%, 11%); /* (main BG)*/
+	--Card_BG: hsl(216, 50%, 16%); /*(card BG)*/
+	--Line: hsl(215, 32%, 27%); /*(line)*/
+	--White: hsl(0, 0%, 100%);
+	--Soft_blue: hsl(215, 51%, 70%);
+	--Cyan: hsl(178, 100%, 50%);
+	--Cyan_trans: rgba(0, 255, 247, 0.508);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html,
+body {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--Main_BG);
+	font-family: "Outfit", sans-serif;
+}
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.wrapper {
+	flex: 1 0 auto;
+	margin: 1vh auto;
+	max-width: 375px;
+}
+
+.card {
+	width: 320px;
+	background-color: var(--Card_BG);
+	border: none;
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 18px;
+	transition: 0.3s;
+	&-img {
+		width: 280px;
+		height: 280px;
+		border: none;
+		background-image: url(../images/image-equilibrium.jpg);
+		border-radius: 10px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		cursor: pointer;
+		position: relative;
+		&:hover {
+			.card-view {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			background-image: linear-gradient(
+					hsla(178, 100%, 50%, 0.5),
+					hsla(178, 100%, 50%, 0.5)
+				),
+				url(../images/image-equilibrium.jpg);
+		}
+	}
+	&-view {
+		display: none;
+	}
+	& .avatar {
+		width: 35px;
+		height: 35px;
+		border: 1px solid var(--White);
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+	& a {
+		display: block;
+		color: var(--White);
+		font-weight: 600;
+		padding: 20px 0px;
+		font-size: 18px;
+		text-decoration: none;
+		cursor: pointer;
+		&:hover {
+			color: var(--Cyan);
+		}
+	}
+	& p {
+		color: var(--Soft_blue);
+		line-height: 1.5;
+		font-weight: 300;
+		padding: 10px 0px;
+		font-size: 16px;
+	}
+	.details {
+		padding: 15px 0px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+.credits {
+	display: flex;
+	flex-direction: row;
+	padding-top: 15px;
+	border-top: 1px solid var(--Line);
+	& p {
+		font-size: 14px;
+	}
+	& a {
+		display: inline;
+		color: var(--White);
+		font-size: 14px;
+		padding: 0px 0px;
+		font-weight: 300;
+	}
+}
+.eth {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	& span {
+		color: var(--Cyan);
+		font-size: 16px;
+	}
+	& img {
+		padding: 5px;
+	}
+}
+.clock {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	& span {
+		color: var(--Soft_blue);
+		font-size: 16px;
+	}
+	& img {
+		padding: 5px;
+	}
+}
+.footer {
+	flex-shrink: 0;
+	margin-top: 10px;
+	padding: 20px;
+	color: #fff;
+	background-color: var(--Card_BG);
+	& .attribution {
+		text-align: center;
+		& a {
+			text-decoration: none;
+			color: #fff;
+			&:visited {
+				color: #fff;
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.wrapper {
+		margin: 10vh auto;
+	}
+}
